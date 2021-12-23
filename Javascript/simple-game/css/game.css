@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#game {
+    width: 1000px;
+    height: 400px;
+    background-color: black;
+}
+
+#mario {
+    width: 40px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    top: 300px;
+}
+
+.make-it-jump {
+    animation: jump 1s;
+}
+
+@keyframes jump {
+    0% { top: 300px; }
+    30% { top: 200px; }
+    70% { top: 200px; }
+    100% { top: 300px; }
+}
+
+#cactus {
+    width: 40px;
+    height: 40px;
+    background-color: green;
+    position: relative;
+    top: 260px;
+    left: 960px;
+    animation: block 3s infinite;
+}
+
+@keyframes block {
+    0% { left: 960px; }
+    100% { left: -200px; }
+}
