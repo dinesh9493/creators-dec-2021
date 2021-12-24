@@ -8,11 +8,11 @@ function jump() {
     }, 1000);
 }
 
-
+/* 
 var jumping = setInterval(() => {
     let marioTop = parseInt(window.getComputedStyle(mario).getPropertyValue("top"));
     let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"));
     if(cactusLeft > 0 && cactusLeft < 40 && marioTop >= 200) {
         alert("Ouch...!!!");
     }
-}, 10);
+}, 10); */
