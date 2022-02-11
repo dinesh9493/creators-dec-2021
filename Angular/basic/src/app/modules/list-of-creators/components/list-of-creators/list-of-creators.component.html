@@ -1,0 +1,21 @@
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let creator of listOfCreators">
+            <td>{{creator.firstName}}</td>
+            <td>{{creator.lastName}}</td>
+            <td>{{creator.email}}</td>
+            <td>{{creator.mobile}}</td>
+        </tr>
+        <tr *ngIf="!listOfCreators.length">
+            <td colspan="4">No one Registered so far</td>
+        </tr>
+    </tbody>
+</table>

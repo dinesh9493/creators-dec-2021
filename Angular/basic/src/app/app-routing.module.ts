@@ -7,6 +7,8 @@ const routes: Routes = [
   { path: "data-type", loadChildren: () => import('./modules/data-type/data-type.module').then(m => m.DataTypeModule) },
   { path: "variables", loadChildren: () => import('./modules/variables/variables.module').then(m => m.VariablesModule) },
   { path: "condtional-statements", loadChildren: () => import('./modules/conditional-statements/conditional-statements.module').then(m => m.ConditionalStatementsModule) },
+  { path: "register", loadChildren: () => import('./modules/register/register.module').then(m => m.RegisterModule) },
+  { path: "list-of-creators", loadChildren: () => import('./modules/list-of-creators/list-of-creators.module').then(m => m.ListOfCreatorsModule) },
   { path: "**", redirectTo: "", pathMatch: "full" },
 ];
 

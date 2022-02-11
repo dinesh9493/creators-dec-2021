@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="row message-div" *ngIf="registrationComleted">
+        <div class="col-md-12">
+            <div class="alert alert-success" role="alert">
+                Registration Successfull!
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <form [formGroup]="registerForm">
+                <div class="row">
+                    <div class="col-md-6 label-div">
+                        <label for="firstName">First Name :</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" id="firtName" formControlName="firstName" name="firstName"
+                            [ngClass]="{'error-field' : isRegisterClicked && registerForm.controls.firstName.invalid}" />
+                        <div class="row" *ngIf="isRegisterClicked && registerForm.controls.firstName.invalid">
+                            <div class="col-md-12 error-message">Firstname is Required.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 label-div">
+                        <label for="lastName">Last Name :</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" id="lastName" formControlName="lastName" name="lastName"
+                            [ngClass]="{'error-field' : isRegisterClicked && registerForm.controls.lastName.invalid}" />
+                        <div class="row" *ngIf="isRegisterClicked && registerForm.controls.lastName.invalid">
+                            <div class="col-md-12 error-message">Lastname is Required.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 label-div">
+                        <label for="email">Email :</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" id="email" formControlName="email" name="email"
+                            [ngClass]="{'error-field' : isRegisterClicked && registerForm.controls.email.invalid}" />
+                        <div class="row" *ngIf="isRegisterClicked && registerForm.controls.email.invalid">
+                            <div class="col-md-12 error-message" *ngIf="registerForm.controls.email.errors?.required">
+                                Email is Required.</div>
+                            <div class="col-md-12 error-message" *ngIf="registerForm.controls.email.errors?.email">Email
+                                is not valid.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 label-div">
+                        <label for="mobileNumber">Mobile Number :</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="tel" id="mobileNumber" formControlName="mobile" name="mobileNumber"
+                            [ngClass]="{'error-field' : isRegisterClicked && registerForm.controls.mobile.invalid}" />
+                        <div class="row" *ngIf="isRegisterClicked && registerForm.controls.mobile.invalid">
+                            <div class="col-md-12 error-message" *ngIf="registerForm.controls.mobile.errors?.required">
+                                Mobile number is Required.</div>
+                            <div class="col-md-12 error-message" *ngIf="registerForm.controls.mobile.errors?.minlength">
+                                Minimum length should be 10.</div>
+                            <div class="col-md-12 error-message" *ngIf="registerForm.controls.mobile.errors?.maxlength">
+                                Maximum length should be 10.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                    </div>
+                    <div class="col-md-6 button-div">
+                        <button class="btn btn-primary" (click)="register()">Register</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+
+</div>
