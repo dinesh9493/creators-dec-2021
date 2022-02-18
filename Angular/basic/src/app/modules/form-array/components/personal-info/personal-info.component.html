@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="personalInfoForm">
+                <div class="row">
+                    <div class="col-md-3 label-div">
+                        <label for="firstName">First Name</label>
+                    </div>
+                    <div class="col-md-6 input-div">
+                        <input type="text" name="firstName" id="firstName" formControlName="firstName" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 label-div">
+                        <label for="lastName">Last Name</label>
+                    </div>
+                    <div class="col-md-6 input-div">
+                        <input type="text" name="lastName" id="lastName" formControlName="lastName" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 label-div">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="col-md-6 input-div">
+                        <input type="email" name="email" id="email" formControlName="email" />
+                    </div>
+                </div>
+
+                <div formArrayName="addressListform" *ngFor="let address of addressListform.controls; let i = index">
+                    <div class="row address-list">
+                        <p>Address {{i+1}} :</p>
+                        <div class="col-md-12">
+                            <div [formGroupName]="i">
+                                <div class="row">
+                                    <div class="col-md-3 label-div">
+                                        <label for="streetAddress">Street Address</label>
+                                    </div>
+                                    <div class="col-md-6 input-div">
+                                        <input type="text" name="streetAddress" id="streetAddress"
+                                            formControlName="streetAddress" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 label-div">
+                                        <label for="city">City</label>
+                                    </div>
+                                    <div class="col-md-6 input-div">
+                                        <input type="text" name="city" id="city" formControlName="city" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 label-div">
+                                        <label for="state">State</label>
+                                    </div>
+                                    <div class="col-md-6 input-div">
+                                        <input type="text" name="state" id="state" formControlName="state" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 label-div">
+                                        <label for="country">Country</label>
+                                    </div>
+                                    <div class="col-md-6 input-div">
+                                        <input type="text" name="country" id="country" formControlName="country" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 label-div">
+                                        <label for="mobile">Mobile Number</label>
+                                    </div>
+                                    <div class="col-md-6 input-div">
+                                        <input type="tel" name="mobile" id="mobile" formControlName="mobile" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 btn-div">
+                        <button class="btn btn-primary" (click)="addMoreAddress()">Add More</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

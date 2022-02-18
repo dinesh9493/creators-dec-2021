@@ -4,6 +4,8 @@ import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
+  { path: "http", loadChildren: () => import('./modules/http-examples/http-examples.module').then(m => m.HttpExamplesModule) },
+  { path: "form-array", loadChildren: () => import('./modules/form-array/form-array.module').then(m => m.FormArrayModule) },
   { path: "data-type", loadChildren: () => import('./modules/data-type/data-type.module').then(m => m.DataTypeModule) },
   { path: "variables", loadChildren: () => import('./modules/variables/variables.module').then(m => m.VariablesModule) },
   { path: "condtional-statements", loadChildren: () => import('./modules/conditional-statements/conditional-statements.module').then(m => m.ConditionalStatementsModule) },
